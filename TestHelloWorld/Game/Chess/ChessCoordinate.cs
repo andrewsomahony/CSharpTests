@@ -38,6 +38,10 @@ namespace TestHelloWorld {
 				public ChessCoordinate(int rank, int file) : this(rank, Char.ToString((char)('a' + (file - 1)))) {
 				}
 
+				public ChessCoordinate(Coordinate c) : this(c.y, c.x) {
+					
+				}
+
 				public static ChessCoordinate FromCoordinate(Coordinate c) {
 					return new ChessCoordinate(c.y, Char.ToString((char)('a' + c.x - 1)));
 				}

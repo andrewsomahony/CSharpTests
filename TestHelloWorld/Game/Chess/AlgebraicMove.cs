@@ -242,7 +242,7 @@ namespace TestHelloWorld {
 							   _resultsInCheckmate == move.resultsInCheckmate &&
 							   _piece == move.piece &&
 							   _isCapture == move.isCapture &&
-							   _newCoordinates == move.newCoordinates &&
+							   newCoordinates == move.newCoordinates &&
 							   _pieceFile == move.pieceFile &&
 							   _pieceRank == move.pieceRank &&
 							   _promotionPiece == move.promotionPiece;					
@@ -282,11 +282,17 @@ namespace TestHelloWorld {
 					get {
 						return _isKingsideCastle;
 					}
+					set {
+						_isKingsideCastle = value;
+					}
 				}
 
 				public bool isQueensideCastle {
 					get {
 						return _isQueensideCastle;
+					}
+					set {
+						_isQueensideCastle = value;
 					}
 				}
 
@@ -354,7 +360,14 @@ namespace TestHelloWorld {
 				public ChessCoordinate newCoordinates {
 					get {
 						// !!! Should I do some sort of check here?
-						return _newCoordinates.Value;
+						if (false == _newCoordinates.HasValue) {
+							return new ChessCoordinate();
+						} else {
+							return _newCoordinates.Value;
+						}
+					}
+					set {
+						_newCoordinates = value;
 					}
 				}
 

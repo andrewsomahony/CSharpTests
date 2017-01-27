@@ -247,8 +247,9 @@ namespace TestHelloWorld {
 					return _piecesTakenOrRemoved.Pop();
 				}
 
-				private void MovePiece(ChessPiece piece, ChessMove move) {
+				private void MovePiece(ChessPiece piece, ChessMove move, ref AlgebraicMove finalAlgebraicMove) {
 					piece.Move(move);
+					finalAlgebraicMove.newCoordinates = new ChessCoordinate(piece.coordinates);
 					_savedMoves.Push(new SavedChessMove(move, piece));
 				}
 
@@ -431,7 +432,7 @@ namespace TestHelloWorld {
 						} else {
 							AlgebraicMove finalAlgebraicMove = algebraicMove; // Copies the struct into the new struct.
 
-							MovePiece(finalPiece, finalMove);
+							MovePiece(finalPiece, finalMove, ref finalAlgebraicMove);
 
 							ExecuteRulesAfterMove(rulesThatApply, currentChessPlayer,
 												  finalMove, finalPiece, ref finalAlgebraicMove);

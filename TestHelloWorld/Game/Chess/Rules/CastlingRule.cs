@@ -172,6 +172,12 @@ namespace TestHelloWorld {
 					Coordinate newRookCoordinates = new Coordinate(piece.coordinates.x - Math.Sign(move.xDisplacement),
 																   piece.coordinates.y);
 
+					if (-1 == Math.Sign(move.xDisplacement)) {
+						finalMove.isQueensideCastle = true;
+					} else {
+						finalMove.isKingsideCastle = true;
+					}
+
 					rook.Move(newRookCoordinates);
 				}	
 
