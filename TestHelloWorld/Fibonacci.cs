@@ -3,22 +3,22 @@ using System.Collections.Generic;
 
 namespace TestHelloWorld {
 	public class Fibonacci {
-		private List<long> _numbers;
+		private List<ulong> _numbers;
 
 		public Fibonacci() {
-			_numbers = new List<long>();
+			_numbers = new List<ulong>();
 		}
 
 		public Fibonacci(int numSteps) : this() {
-			long firstNumber = 0;
-			long secondNumber = 1;
+			ulong firstNumber = 0;
+			ulong secondNumber = 1;
 
 			_numbers.Add(firstNumber);
 
 			while (0 != numSteps) {
 				_numbers.Add(secondNumber);
 
-				long temp = firstNumber;
+				ulong temp = firstNumber;
 				firstNumber = secondNumber;
 				secondNumber += temp;
 
@@ -27,13 +27,13 @@ namespace TestHelloWorld {
 		}
 
 		public void print() {
-			foreach (long i in _numbers) {
+			foreach (ulong i in _numbers) {
 				Console.Write(i + " ");
 			}
 			Console.Write("\n");
 		}
 
-		public long this[int index] {
+		public ulong this[int index] {
 			get {
 				return _numbers[index];
 			}

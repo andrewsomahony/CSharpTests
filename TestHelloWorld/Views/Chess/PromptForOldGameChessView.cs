@@ -31,21 +31,20 @@ namespace TestHelloWorld {
 			Clear();
 			DrawChessBoard();
 
-			while (true) {
-				ReadAndParse("Enter file path", stringParser);
-
-				try {
-					ioChessGame.LoadPGN(stringParser.value);
-					break;
-				} catch (Exception e) {
-					Console.WriteLine(e.Message);
-				}
+			if (!ReadAndParse("Enter file path", stringParser)) {
+				return;
 			}
 
-			if (ioChessGame.numGamesLoaded > 1) {
-				_parentViewStack.PushView(new SelectOldGameChessView(ioChessGame));
-			} else {
-				_parentViewStack.PushView(new ReplayOldGameChessView(ioChessGame, 0));
+			try {
+				ioChessGame.LoadPGN(stringParser.value);
+
+				if (ioChessGame.numGamesLoaded > 1) {
+					_parentViewStack.PushView(new SelectOldGameChessView(ioChessGame));
+				} else {
+					_parentViewStack.PushView(new ReplayOldGameChessView(ioChessGame, 0));
+				}
+			} catch (Exception e) {
+				Console.WriteLine(e.Message);
 			}
 		}
 	}

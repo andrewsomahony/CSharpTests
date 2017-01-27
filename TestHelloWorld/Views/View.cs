@@ -104,7 +104,7 @@ namespace TestHelloWorld {
 			
 		}
 
-		public void Close() {
+		public virtual void Close() {
 			_isAlive = false;
 		}
 

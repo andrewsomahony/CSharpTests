@@ -18,9 +18,5 @@ namespace TestHelloWorld {
 				return _game as IOChessGame;
 			}
 		}
-
-		public override void Init() {
-			base.Init();
-		}
 	}
 }

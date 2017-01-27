@@ -91,6 +91,14 @@ namespace TestHelloWorld {
 			ResizeScreen(100, 50);
 		}
 
+		public override void Close() {
+			// When the user decides they're done, we want to clear the game we're playing.
+			if (null != _game) {
+				_game.Clear();
+			}
+			base.Close();
+		}
+
 		// This allows us to map the display to any potential locale,
 		// with whatever characters they use.
 
