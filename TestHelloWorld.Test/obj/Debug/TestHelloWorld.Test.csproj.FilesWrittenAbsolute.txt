@@ -1,9 +1,0 @@
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/bin/Debug/TestHelloWorld.Test.dll.mdb
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/bin/Debug/TestHelloWorld.Test.dll
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/obj/Debug/TestHelloWorld.Test.dll
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/obj/Debug/TestHelloWorld.Test.dll.mdb
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/bin/Debug/nunit.framework.dll
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/bin/Debug/TestHelloWorld.exe
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/bin/Debug/TestHelloWorld.exe.mdb
-/Users/andrew/development/CSharp/TestHelloWorld/TestHelloWorld.Test/bin/Debug/pgn.net.dll

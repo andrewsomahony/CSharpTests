@@ -2,9 +2,9 @@
 *~
 
 # Build/test output
-obj
-bin
-test-results
+**/obj/*
+**/bin/*
+**/test-results/*
 
 # VS sometimes writes these for no apparent reason
 _UpgradeReport_Files
