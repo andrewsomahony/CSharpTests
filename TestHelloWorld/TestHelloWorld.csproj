@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{56EAA8E4-E142-4F8B-91A6-E0BBD19CF118}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TestHelloWorld</RootNamespace>
+    <AssemblyName>TestHelloWorld</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="pgn.net">
+      <HintPath>..\packages\pgn.net.1.2.1\lib\net45\pgn.net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FizzBuzz.cs" />
+    <Compile Include="DaysSince.cs" />
+    <Compile Include="Numeral.cs" />
+    <Compile Include="MusicPlaylist.cs" />
+    <Compile Include="Alphabet.cs" />
+    <Compile Include="ViewStack.cs" />
+    <Compile Include="Parsers.cs" />
+    <Compile Include="Views\DaysSinceView.cs" />
+    <Compile Include="Menu\MainMenu.cs" />
+    <Compile Include="Menu\Menu.cs" />
+    <Compile Include="Views\View.cs" />
+    <Compile Include="Menu\RomanNumeralMenu.cs" />
+    <Compile Include="Views\ArabicToRomanNumeralView.cs" />
+    <Compile Include="Views\RomanToArabicNumeralView.cs" />
+    <Compile Include="Views\ParsedRomanToArabicNumeralView.cs" />
+    <Compile Include="Views\MusicPlaylistView.cs" />
+    <Compile Include="Fibonacci.cs" />
+    <Compile Include="Views\FibonacciView.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\BoardGame.cs" />
+    <Compile Include="Game\Piece.cs" />
+    <Compile Include="Game\Move.cs" />
+    <Compile Include="Game\Rule.cs" />
+    <Compile Include="Game\Board.cs" />
+    <Compile Include="Game\Player.cs" />
+    <Compile Include="Game\Chess\ChessBoard.cs" />
+    <Compile Include="Game\Chess\ChessPiece.cs" />
+    <Compile Include="Game\Chess\Pieces\King.cs" />
+    <Compile Include="Game\Chess\ChessGame.cs" />
+    <Compile Include="Game\Chess\Pieces\Queen.cs" />
+    <Compile Include="Game\Chess\Pieces\Bishop.cs" />
+    <Compile Include="Game\Chess\ChessPlayer.cs" />
+    <Compile Include="Game\Chess\Pieces\Knight.cs" />
+    <Compile Include="Game\Chess\Pieces\Rook.cs" />
+    <Compile Include="Game\Chess\Pieces\Pawn.cs" />
+    <Compile Include="Coordinate.cs" />
+    <Compile Include="Game\Chess\ChessCoordinate.cs" />
+    <Compile Include="Game\Chess\ChessMove.cs" />
+    <Compile Include="Game\Chess\AlgebraicMove.cs" />
+    <Compile Include="Game\Chess\ChessRule.cs" />
+    <Compile Include="Game\Chess\Rules\NoPieceInTheWayRule.cs" />
+    <Compile Include="Game\Chess\Rules\CaptureRule.cs" />
+    <Compile Include="Game\Chess\Rules\EnPassantRule.cs" />
+    <Compile Include="Game\Chess\Rules\OwnKingInCheckRule.cs" />
+    <Compile Include="Game\Chess\Rules\PawnPromotionRule.cs" />
+    <Compile Include="Game\Chess\ChessGame_Promotions.cs" />
+    <Compile Include="Game\Chess\ChessGame_GetPieces.cs" />
+    <Compile Include="Game\Chess\ChessGame_CheckAndCheckmate.cs" />
+    <Compile Include="Game\Chess\ChessGame_CheckStalemate.cs" />
+    <Compile Include="Game\Chess\Rules\CastlingRule.cs" />
+    <Compile Include="Menu\LocalMenu.cs" />
+    <Compile Include="Menu\StackMenu.cs" />
+    <Compile Include="Game\Chess\ChessGame_Pieces.cs" />
+    <Compile Include="Game\Chess\IOChessGame.cs" />
+    <Compile Include="Game\Chess\FIle IO\ChessFile.cs" />
+    <Compile Include="Game\Chess\FIle IO\PGNChessFile.cs" />
+    <Compile Include="Game\Chess\FIle IO\FileChessGame.cs" />
+    <Compile Include="Game\Chess\FIle IO\FileChessGame_Classes.cs" />
+    <Compile Include="Game\Chess\FIle IO\ChessFileLoader.cs" />
+    <Compile Include="Game\Chess\ChessPieceToChessMoveDictionary.cs" />
+    <Compile Include="Views\Chess\ChessView.cs" />
+    <Compile Include="Views\Chess\NewGameChessView.cs" />
+    <Compile Include="Views\Chess\PromptForOldGameChessView.cs" />
+    <Compile Include="Views\Chess\SelectOldGameChessView.cs" />
+    <Compile Include="Views\Chess\ReplayOldGameChessView.cs" />
+    <Compile Include="Views\Chess\OldGameChessView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Menu\" />
+    <Folder Include="Game\" />
+    <Folder Include="Game\Chess\" />
+    <Folder Include="Game\Chess\Pieces\" />
+    <Folder Include="Game\Chess\Rules\" />
+    <Folder Include="Game\Chess\FIle IO\" />
+    <Folder Include="Views\Chess\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

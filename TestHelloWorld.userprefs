@@ -1,0 +1,70 @@
+﻿<Properties StartupConfiguration="{56EAA8E4-E142-4F8B-91A6-E0BBD19CF118}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestHelloWorld/Fibonacci.cs">
+    <Files>
+      <File FileName="TestHelloWorld/Game/Chess/FIle IO/ChessFile.cs" Line="28" Column="60" />
+      <File FileName="TestHelloWorld/Game/Chess/IOChessGame.cs" Line="367" Column="52" />
+      <File FileName="TestHelloWorld/Game/Chess/FIle IO/PGNChessFile.cs" Line="138" Column="8" />
+      <File FileName="TestHelloWorld/Program.cs" Line="8" Column="4" />
+      <File FileName="TestHelloWorld/Game/Chess/FIle IO/FileChessGame.cs" Line="104" Column="7" />
+      <File FileName="TestHelloWorld/Game/Chess/FIle IO/FileChessGame_Classes.cs" Line="8" Column="30" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessGame.cs" Line="439" Column="32" />
+      <File FileName="TestHelloWorld/Game/Chess/Rules/CaptureRule.cs" Line="47" Column="37" />
+      <File FileName="TestHelloWorld/Game/Chess/Rules/PawnPromotionRule.cs" Line="12" Column="104" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessGame_Promotions.cs" Line="1" Column="1" />
+      <File FileName="TestHelloWorld/Views/DaysSinceView.cs" Line="33" Column="6" />
+      <File FileName="TestHelloWorld/DaysSince.cs" Line="111" Column="37" />
+      <File FileName="TestHelloWorld/Views/View.cs" Line="23" Column="3" />
+      <File FileName="TestHelloWorld/Menu/Menu.cs" Line="24" Column="18" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessCoordinate.cs" Line="51" Column="18" />
+      <File FileName="TestHelloWorld/Menu/MainMenu.cs" Line="9" Column="33" />
+      <File FileName="TestHelloWorld/Menu/LocalMenu.cs" Line="69" Column="4" />
+      <File FileName="TestHelloWorld/ViewStack.cs" Line="27" Column="20" />
+      <File FileName="TestHelloWorld/Menu/StackMenu.cs" Line="26" Column="1" />
+      <File FileName="TestHelloWorld/Game/Chess/Rules/CastlingRule.cs" Line="127" Column="37" />
+      <File FileName="TestHelloWorld/Game/Chess/Rules/NoPieceInTheWayRule.cs" Line="50" Column="1" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessGame_GetPieces.cs" Line="103" Column="9" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessPiece.cs" Line="34" Column="1" />
+      <File FileName="TestHelloWorld/Game/Piece.cs" Line="50" Column="1" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessBoard.cs" Line="28" Column="1" />
+      <File FileName="TestHelloWorld/Game/Board.cs" Line="30" Column="41" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessMove.cs" Line="4" Column="20" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessRule.cs" Line="19" Column="35" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessGame_CheckAndCheckmate.cs" Line="50" Column="15" />
+      <File FileName="TestHelloWorld/Game/Chess/FIle IO/ChessFileLoader.cs" Line="39" Column="1" />
+      <File FileName="TestHelloWorld/Game/BoardGame.cs" Line="6" Column="35" />
+      <File FileName="TestHelloWorld/Game/Game.cs" Line="17" Column="30" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessGame_CheckStalemate.cs" Line="31" Column="1" />
+      <File FileName="TestHelloWorld/Game/Chess/Rules/OwnKingInCheckRule.cs" Line="79" Column="34" />
+      <File FileName="TestHelloWorld/Game/Chess/Rules/EnPassantRule.cs" Line="44" Column="32" />
+      <File FileName="TestHelloWorld/Game/Chess/AlgebraicMove.cs" Line="314" Column="1" />
+      <File FileName="TestHelloWorld/Game/Rule.cs" Line="1" Column="1" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessGame_Pieces.cs" Line="18" Column="6" />
+      <File FileName="TestHelloWorld/Game/Chess/ChessPieceToChessMoveDictionary.cs" Line="8" Column="50" />
+      <File FileName="TestHelloWorld/Coordinate.cs" Line="13" Column="38" />
+      <File FileName="TestHelloWorld/Views/Chess/NewGameChessView.cs" Line="53" Column="51" />
+      <File FileName="TestHelloWorld/Views/Chess/ChessView.cs" Line="241" Column="5" />
+      <File FileName="TestHelloWorld/Menu/RomanNumeralMenu.cs" Line="6" Column="26" />
+      <File FileName="TestHelloWorld/Views/RomanToArabicNumeralView.cs" Line="17" Column="4" />
+      <File FileName="TestHelloWorld/Views/Chess/PromptForOldGameChessView.cs" Line="33" Column="4" />
+      <File FileName="TestHelloWorld/Views/Chess/SelectOldGameChessView.cs" Line="16" Column="33" />
+      <File FileName="TestHelloWorld/Views/Chess/ReplayOldGameChessView.cs" Line="66" Column="77" />
+      <File FileName="TestHelloWorld/Views/Chess/OldGameChessView.cs" Line="23" Column="16" />
+      <File FileName="TestHelloWorld/Parsers.cs" Line="60" Column="22" />
+      <File FileName="TestHelloWorld/Views/ParsedRomanToArabicNumeralView.cs" Line="29" Column="7" />
+      <File FileName="TestHelloWorld/Views/ArabicToRomanNumeralView.cs" Line="29" Column="7" />
+      <File FileName="TestHelloWorld/Views/MusicPlaylistView.cs" Line="46" Column="7" />
+      <File FileName="TestHelloWorld/Views/FibonacciView.cs" Line="28" Column="7" />
+      <File FileName="TestHelloWorld/Alphabet.cs" Line="1" Column="1" />
+      <File FileName="TestHelloWorld/Game/Move.cs" Line="75" Column="1" />
+      <File FileName="TestHelloWorld/Fibonacci.cs" Line="6" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Catchpoint exceptionName="TestHelloWorld.Games.Chess.CannotReplayChessMoveException" includeSubclasses="True" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TestHelloWorld PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelloWorld", "TestHelloWorld\TestHelloWorld.csproj", "{56EAA8E4-E142-4F8B-91A6-E0BBD19CF118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelloWorld.Test", "TestHelloWorld.Test\TestHelloWorld.Test.csproj", "{EC13E041-A475-4F69-B540-0A2BA75FDB9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56EAA8E4-E142-4F8B-91A6-E0BBD19CF118}.Debug|x86.ActiveCfg = Debug|x86
+		{56EAA8E4-E142-4F8B-91A6-E0BBD19CF118}.Debug|x86.Build.0 = Debug|x86
+		{56EAA8E4-E142-4F8B-91A6-E0BBD19CF118}.Release|x86.ActiveCfg = Release|x86
+		{56EAA8E4-E142-4F8B-91A6-E0BBD19CF118}.Release|x86.Build.0 = Release|x86
+		{EC13E041-A475-4F69-B540-0A2BA75FDB9E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC13E041-A475-4F69-B540-0A2BA75FDB9E}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC13E041-A475-4F69-B540-0A2BA75FDB9E}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC13E041-A475-4F69-B540-0A2BA75FDB9E}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
