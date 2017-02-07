@@ -16,29 +16,35 @@ namespace TestHelloWorld {
 
 			v.parentViewStack = this;
 
+			bool hasExited = false;
 			try {
 				v.Init();
 				v.Run();
 			} catch (ViewReceivedExitCommandException) {
-				Exit();
+				hasExited = true;
 			} catch (ViewReceivedCloseCommandException) {
-
+				// Let the finally block close the view
 			} catch (AggregateException e) {
-				Console.WriteLine(e.InnerExceptions.Count);
-				Console.WriteLine(e.GetBaseException());
-				foreach (Exception innerException in e.InnerExceptions) {
-					Console.WriteLine(e);
-				}
 				// These are thrown if this view is async.
-				// Just ignore them.
-			} catch (Exception) {
-				
-			} finally {
-				v.Close();
-				v.Stop();
-			}
 
-			PopView();
+				e.Handle((exception) => {
+					if (exception is ViewReceivedExitCommandException) {
+						hasExited = true;
+						return true;
+					} else if (exception is ViewReceivedCloseCommandException) {
+						return true;
+					} else {
+						return false;
+					}
+				});
+			} finally {
+				if (true == hasExited) {
+					Exit();
+				} else {
+					v.Close();
+					PopView();
+				}
+			}
 		}
 
 		private void PopView() {
