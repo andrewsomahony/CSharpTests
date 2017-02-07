@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TestHelloWorld {
 	using Parsers;
-	using Games.Chess;
+	using Games.BoardGames.Chess;
 
 	public class InvalidScrollIndexException : Exception {
 		public InvalidScrollIndexException(int index) : base("Invalid scroll index! " + index) {
@@ -91,12 +91,12 @@ namespace TestHelloWorld {
 			ResizeScreen(100, 50);
 		}
 
-		public override void Close() {
+		public override void Stop() {
 			// When the user decides they're done, we want to clear the game we're playing.
 			if (null != _game) {
 				_game.Clear();
 			}
-			base.Close();
+			base.Stop();
 		}
 
 		// This allows us to map the display to any potential locale,

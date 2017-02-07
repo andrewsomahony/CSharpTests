@@ -1,9 +1,16 @@
 ﻿using System;
-using TestHelloWorld.Parsers;
+using System.Threading.Tasks;
 
 namespace TestHelloWorld {
 	public class DaysSinceView : View {
 		public DaysSinceView() {
+			_program = new DaysSinceProgram();
+		}
+
+		private DaysSinceProgram daysSinceProgram {
+			get {
+				return (DaysSinceProgram)_program;
+			}
 		}
 
 		public override string title {
@@ -12,31 +19,20 @@ namespace TestHelloWorld {
 			}
 		}
 
-		public override void Run() {
+		async public Task RunAsync() {
 			Show();
 
-			IntStringParser day = new IntStringParser();
-			IntStringParser month = new IntStringParser();
-			IntStringParser year = new IntStringParser();
+			while (isAlive) {
+				// Keep running the program over and over again.
+				// This means initializing it and such each time.
+				await RunProgramAsync();
 
-			while (true) {
-				try {
-					if (!ReadAndParse("Enter the day", day)) {
-						break;
-					}
-					if (!ReadAndParse("Enter the month", month)) {
-						break;
-					}
-					if (!ReadAndParse("Enter the year", year)) {
-						break;
-					}
+				Console.WriteLine(daysSinceProgram.daysSinceDate + " days since " + daysSinceProgram.dateString);
+			}			
+		}
 
-					DaysSince s = new DaysSince(day.value, month.value, year.value);
-					Console.WriteLine(s.daysSince + " days since " + s.dateString);
-				} catch (Exception e) {
-					Console.WriteLine(e.Message);
-				}
-			}
+		public override void Run() {
+			RunAsync().Wait();
 		}
 	}
 }

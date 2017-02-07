@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace TestHelloWorld {
-	using Games.Chess;
+	using Games.BoardGames.Chess;
 	using Parsers;
 
 	public class SelectOldGameChessView : OldGameChessView {

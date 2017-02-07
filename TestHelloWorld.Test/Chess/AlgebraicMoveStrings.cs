@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 namespace TestHelloWorld.Test {
-	using TestHelloWorld.Games.Chess;
+	using TestHelloWorld.Games.BoardGames.Chess;
 
 	[TestFixture]
 	public class AlgebraicMoveStrings {

@@ -14,12 +14,12 @@ namespace TestHelloWorld {
 			}
 		}
 
-		public abstract class StringParser {
+		public abstract class OldStringParser {
 			public abstract void Parse(string s);
 			public abstract bool CanParse(string s);
 		}
 
-		public class DefaultStringParser : StringParser {
+		public class DefaultStringParser : OldStringParser {
 			string _value;
 
 			public override void Parse(string s) {
@@ -89,7 +89,7 @@ namespace TestHelloWorld {
 			}
 		}
 
-		public class IntStringParser : StringParser {
+		public class IntStringParser : OldStringParser {
 			int _value;
 
 			private int DoParse(string s) {

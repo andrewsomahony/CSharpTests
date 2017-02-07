@@ -16,15 +16,35 @@ namespace TestHelloWorld {
 
 			v.parentViewStack = this;
 
-			v.Init();
-			while (v.isAlive) {
+			try {
+				v.Init();
 				v.Run();
+			} catch (ViewReceivedExitCommandException) {
+				Exit();
+			} catch (ViewReceivedCloseCommandException) {
+
+			} catch (AggregateException e) {
+				Console.WriteLine(e.InnerExceptions.Count);
+				Console.WriteLine(e.GetBaseException());
+				foreach (Exception innerException in e.InnerExceptions) {
+					Console.WriteLine(e);
+				}
+				// These are thrown if this view is async.
+				// Just ignore them.
+			} catch (Exception) {
+				
+			} finally {
+				v.Close();
+				v.Stop();
 			}
+
 			PopView();
 		}
 
 		private void PopView() {
-			Console.Clear();
+			if (_views.Count > 1) {
+				Console.Clear();
+			}
 
 			View v = _views[_views.Count - 1];
 			v.Stop();

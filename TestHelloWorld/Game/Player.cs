@@ -10,6 +10,8 @@ namespace TestHelloWorld {
 				_name = name;
 			}
 
+			public abstract void Reset();
+
 			public string name {
 				get {
 					return _name;

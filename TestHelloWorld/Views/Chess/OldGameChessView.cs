@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace TestHelloWorld {
-	using Games.Chess;
+	using Games.BoardGames.Chess;
 	using Parsers;
 
 	public class OldGameChessView : ChessView {
@@ -15,7 +15,7 @@ namespace TestHelloWorld {
 
 		protected IOChessGame ioChessGame {
 			get {
-				return _game as IOChessGame;
+				return (IOChessGame)_game;
 			}
 		}
 	}

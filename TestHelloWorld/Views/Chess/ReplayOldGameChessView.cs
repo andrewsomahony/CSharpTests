@@ -1,6 +1,6 @@
 ﻿using System;
 namespace TestHelloWorld {
-	using Games.Chess;
+	using Games.BoardGames.Chess;
 	using Parsers;
 
 	public class ReplayOldGameChessView : OldGameChessView {
