@@ -2,7 +2,7 @@
 namespace TestHelloWorld {
 	using Parsers;
 
-	public class ParsedRomanToArabicNumeralView : View {
+	public class ParsedRomanToArabicNumeralView : ConsoleView {
 		public ParsedRomanToArabicNumeralView() {
 		}
 

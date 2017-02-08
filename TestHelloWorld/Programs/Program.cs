@@ -6,7 +6,7 @@ namespace TestHelloWorld {
 	using Utils;
 
 	public class Program : IProgram {
-		private IView _view;
+		private IAsyncView _view;
 
 		public Program() {
 		}
@@ -29,7 +29,7 @@ namespace TestHelloWorld {
 			await Task.Delay(0);
 		}
 
-		public void LinkToView(IView v) {
+		public void LinkToView(IAsyncView v) {
 			_view = v;
 		}
 	}

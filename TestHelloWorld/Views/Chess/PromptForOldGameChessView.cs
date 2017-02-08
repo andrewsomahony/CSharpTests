@@ -6,7 +6,7 @@ namespace TestHelloWorld {
 	using Parsers;
 
 	public class PromptForOldGameChessView : OldGameChessView {
-		public PromptForOldGameChessView(Dictionary<int, View> options) : base(options) {
+		public PromptForOldGameChessView(Dictionary<int, IStackView> options) : base(options) {
 		}
 
 		public PromptForOldGameChessView() : this(null) {

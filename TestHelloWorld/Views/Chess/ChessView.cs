@@ -27,7 +27,7 @@ namespace TestHelloWorld {
 		private int _currentMoveViewScrollIndex;
 		private bool _hasScrolled;
 
-		public ChessView(Dictionary<int, View> options) : base(options) {
+		public ChessView(Dictionary<int, IStackView> options) : base(options) {
 			_chessBoardBlockWidth = 5;
 			_chessBoardBlockHeight = 3;
 
@@ -35,7 +35,7 @@ namespace TestHelloWorld {
 			_boardY = 0;			
 		}
 
-		public ChessView() : this(new Dictionary<int, View>() {
+		public ChessView() : this(new Dictionary<int, IStackView>() {
 			{1, new NewGameChessView()},
 			{2, new PromptForOldGameChessView()}
 		}) {

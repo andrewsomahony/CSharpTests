@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 
 namespace TestHelloWorld {
-	public class DaysSinceView : View {
+	public class DaysSinceView : AsyncConsoleView {
 		public DaysSinceView() {
 			_program = new DaysSinceProgram();
 		}
@@ -19,20 +19,26 @@ namespace TestHelloWorld {
 			}
 		}
 
-		async public Task RunAsync() {
-			Show();
-
+		async public override Task RunAsync() {
 			while (isAlive) {
+				Clear();
+				Show();
+
 				// Keep running the program over and over again.
 				// This means initializing it and such each time.
-				await RunProgramAsync();
+				try {
+					await RunProgramAsync();
 
-				Console.WriteLine(daysSinceProgram.daysSinceDate + " days since " + daysSinceProgram.dateString);
+					Console.WriteLine(daysSinceProgram.daysSinceDate + " days since " + daysSinceProgram.dateString);
+
+					// The ViewStack and PushView are synchronous, meaning
+					// this function will block until every view has exited,
+					// so when we return here, we return to exactly where we left off.
+					_parentViewStack.PushView(new FibonacciView());
+				} catch (DaysSinceProgramException e) {
+					Console.WriteLine(e.Message);
+				}
 			}			
-		}
-
-		public override void Run() {
-			RunAsync().Wait();
 		}
 	}
 }

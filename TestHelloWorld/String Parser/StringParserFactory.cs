@@ -52,6 +52,8 @@ namespace TestHelloWorld {
 						parser.ParseString(inputString);
 						outputValue = parser.value;
 
+						// If we've found the parser and it can parse,
+						// then we're all set!
 						return;
 					} catch (InvalidCastException) {
 

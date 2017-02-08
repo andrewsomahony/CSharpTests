@@ -29,14 +29,13 @@ namespace TestHelloWorld {
 		}
 	}
 
-	public abstract class View : IView {
+	public abstract class ConsoleView : IView, IStackView {
 		protected ViewStack _parentViewStack;
+
 		private bool _isAlive = false;
 
 		private const string _backCommand = "back";
 		private const string _quitCommand = "quit";
-
-		protected IProgram _program;
 
 		public abstract string title {
 			get;
@@ -78,7 +77,7 @@ namespace TestHelloWorld {
 			}
 		}
 
-		private string GetPromptFromUserInput<T>(GenericUserInput<T> userInput) {
+		protected string GetPromptFromUserInput<T>(GenericUserInput<T> userInput) {
 			string prompt = "";
 
 			if ("ChessPromotionInput" == userInput.name) {
@@ -117,36 +116,6 @@ namespace TestHelloWorld {
 			return prompt;			
 		}
 
-		// IView interface
-
-		async public virtual Task<GenericUserInput<T>> GetUserInputAsync<T>(GenericUserInput<T> userInput) {
-			await Task.Delay(0); // This function actually blocks, so we suppress a warning by putting this.
-
-			while (true) {
-				try {
-					ReadAndParse(userInput, "", true);
-					break;
-				} catch (InvalidStringToParseException) {
-					Console.WriteLine("Invalid input, needs to be of type " + typeof(T));
-				}
-			}
-			return userInput;
-		}
-
-		async public Task RunProgramAsync(IProgram program) {
-			program.LinkToView(this);
-
-			await program.InitAsync();
-			await program.RunAsync();
-			await program.CloseAsync();
-		}
-
-		async public Task RunProgramAsync() {
-			await RunProgramAsync(_program);
-		}
-
-		// End IView interface
-
 		protected void ReadAndParse<T>(GenericUserInput<T> userInput, 
 		                               string customPrompt = "", bool acceptsCommands = true) {
 			string prompt = customPrompt;
@@ -159,9 +128,9 @@ namespace TestHelloWorld {
 
 			if (true == acceptsCommands) {
 				if (true == ValueIsCommand(value, _backCommand)) {
-					throw new ViewReceivedCloseCommandException();
+					SendCloseCommand();
 				} else if (true == ValueIsCommand(value, _quitCommand)) {
-					throw new ViewReceivedExitCommandException();
+					SendExitCommand();
 				}
 			}
 
@@ -191,7 +160,7 @@ namespace TestHelloWorld {
 						Close();
 						return false;
 					} else if (true == ValueIsCommand(stringParser.value, _quitCommand)) {
-						Exit();
+						_parentViewStack.Exit();
 						return false;
 					}
 				}
@@ -237,15 +206,17 @@ namespace TestHelloWorld {
 			}
 		}
 
-		// Exit and Close are depreciated!
-
-		private void Exit() {
-			Close();
-			_parentViewStack.Exit();
+		public void Close() {
+			Stop();
+			_isAlive = false;
 		}
 
-		public void Close() {
-			_isAlive = false;
+		public void SendCloseCommand() {
+			throw new ViewReceivedCloseCommandException();
+		}
+
+		public void SendExitCommand() {
+			throw new ViewReceivedExitCommandException();
 		}
 
 		public virtual void Init() {
@@ -255,8 +226,6 @@ namespace TestHelloWorld {
 		public virtual void Stop() {
 			
 		}
-
-
 
 		// All the basic view does is close itself.
 

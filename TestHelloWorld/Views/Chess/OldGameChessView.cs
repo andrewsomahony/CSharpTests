@@ -6,7 +6,7 @@ namespace TestHelloWorld {
 	using Parsers;
 
 	public class OldGameChessView : ChessView {
-		public OldGameChessView(Dictionary<int, View> options) : base(options) {
+		public OldGameChessView(Dictionary<int, IStackView> options) : base(options) {
 		}
 
 		public OldGameChessView() : this(null) {

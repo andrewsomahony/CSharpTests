@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace TestHelloWorld {
 	using Parsers;
 
-	public class MusicPlaylistView : View {
+	public class MusicPlaylistView : ConsoleView {
 		private MusicPlaylist _playlist;
 
 		public MusicPlaylistView() {

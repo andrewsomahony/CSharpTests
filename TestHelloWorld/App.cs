@@ -9,11 +9,11 @@ namespace TestHelloWorld {
 	using UserInput;
 
 	class App {
-		static AnyIntValueUserInput _numSettlements;
-		static AnyIntValueUserInput _numCities;
-		static bool isAlive;
+		static Task<string> _moveStringTask;
+		static bool _hasInput;
+		static string _inputString;
 
-		/*async static Task<GenericUserInput<T>> GetInputAsync<T>(GenericUserInput<T> userInput) {
+		async static Task<GenericUserInput<T>> GetInputAsync<T>(GenericUserInput<T> userInput) {
 			await Task.Delay(0); // Suppress the "this doesn't have await" warning
 
 			string s = Console.ReadLine();
@@ -27,32 +27,22 @@ namespace TestHelloWorld {
 			return userInput;
 		}
 
-		async static Task InitAsync() {
-			_numSettlements = new AnyIntValueUserInput();
-			_numCities = new AnyIntValueUserInput();
+		async static Task<string> GetMoveString() {
+			_moveStringTask = new Task<string>(() => { 
+				while (!_hasInput) { }
+				return _inputString;
+			});
 
-			try {
-				await GetInputAsync(_numSettlements);
-				await GetInputAsync(_numCities);
-			} catch (Exception) {
-				isAlive = false;
-			}
-		}*/
-
-		/*async static Task MainAsync(string[] args) {
-			isAlive = true;
-			await InitAsync();
-
-			while (isAlive) {
-				Console.WriteLine(_numSettlements);
-				Console.WriteLine(_numCities);
-			}
+			return await _moveStringTask;
 		}
-		*/
+
+		async static Task MainAsync(string[] args) {
+			await GetMoveString();
+		}
+
+
 		public static void Main(string[] args) {
 			//MainAsync(args).Wait();
-
-
 
 			/*AppPromise<int>.CreatePromise((resolve, reject) => {
 				resolve.Invoke(1);

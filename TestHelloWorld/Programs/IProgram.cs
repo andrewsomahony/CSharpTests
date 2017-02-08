@@ -10,7 +10,7 @@ namespace TestHelloWorld {
 		Task RunAsync();
 		Task CloseAsync();
 
-		void LinkToView(IView view);
+		void LinkToView(IAsyncView view);
 
 		Task<GenericUserInput<T>> RequiresUserInputAsync<T>(GenericUserInput<T> userInput);
 	}

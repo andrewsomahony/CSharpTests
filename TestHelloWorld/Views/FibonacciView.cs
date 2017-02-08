@@ -2,7 +2,7 @@
 namespace TestHelloWorld {
 	using Parsers;
 
-	public class FibonacciView : View {
+	public class FibonacciView : ConsoleView {
 		public FibonacciView() {
 		}
 

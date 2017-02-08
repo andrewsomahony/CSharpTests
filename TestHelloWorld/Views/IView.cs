@@ -6,7 +6,14 @@ namespace TestHelloWorld {
 	using Utils;
 
 	public interface IView {
-		Task<GenericUserInput<T>> GetUserInputAsync<T>(GenericUserInput<T> userInput);
-		Task RunProgramAsync(IProgram program);
+		void Init();
+		void Stop();
+
+		void Run();
+		void Close();
+
+		string title {
+			get;
+		}
 	}
 }

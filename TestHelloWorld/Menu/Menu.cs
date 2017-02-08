@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TestHelloWorld.Parsers;
 
 namespace TestHelloWorld {
-	public abstract class Menu : View {
+	public abstract class Menu : ConsoleView {
 		protected string prompt = "Enter selection";
 
 		protected abstract void ExecuteOption(int index);

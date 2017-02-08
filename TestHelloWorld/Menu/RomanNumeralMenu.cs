@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TestHelloWorld {
 	public class RomanNumeralMenu : StackMenu {
-		public RomanNumeralMenu() : base(new Dictionary<int, View>() {
+		public RomanNumeralMenu() : base(new Dictionary<int, IStackView>() {
 			{1, new ArabicToRomanNumeralView()},
 			{2, new RomanToArabicNumeralView()},
 			{3, new ParsedRomanToArabicNumeralView()}

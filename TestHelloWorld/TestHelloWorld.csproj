@@ -46,12 +46,11 @@
     <Compile Include="Numeral.cs" />
     <Compile Include="MusicPlaylist.cs" />
     <Compile Include="Alphabet.cs" />
-    <Compile Include="ViewStack.cs" />
     <Compile Include="Parsers.cs" />
     <Compile Include="Views\DaysSinceView.cs" />
     <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="Menu\Menu.cs" />
-    <Compile Include="Views\View.cs" />
+    <Compile Include="Views\ConsoleView.cs" />
     <Compile Include="Menu\RomanNumeralMenu.cs" />
     <Compile Include="Views\ArabicToRomanNumeralView.cs" />
     <Compile Include="Views\RomanToArabicNumeralView.cs" />
@@ -138,6 +137,10 @@
     <Compile Include="Programs\DaysSinceProgram.cs" />
     <Compile Include="Utils\RandomNumber.cs" />
     <Compile Include="Utils\AppPromise.cs" />
+    <Compile Include="Views\View Stack\IStackView.cs" />
+    <Compile Include="Views\View Stack\ViewStack.cs" />
+    <Compile Include="Views\Async\AsyncConsoleView.cs" />
+    <Compile Include="Views\Async\IAsyncView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -156,6 +159,8 @@
     <Folder Include="User Input\Primitive Types\" />
     <Folder Include="Programs\" />
     <Folder Include="Utils\" />
+    <Folder Include="Views\View Stack\" />
+    <Folder Include="Views\Async\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

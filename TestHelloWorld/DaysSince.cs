@@ -48,7 +48,7 @@ namespace TestHelloWorld
 		}
 	}
 
-	public class AfterCurrentException : Exception {
+	public abstract class AfterCurrentException : Exception {
 		public AfterCurrentException(string message) : base(message) {
 		}
 	}
@@ -60,6 +60,12 @@ namespace TestHelloWorld
 
 	public class MonthAfterCurrentMonthException : AfterCurrentException { 
 		public MonthAfterCurrentMonthException() : base("Month is after the current month!") {
+		}
+	}
+
+	public class InvalidDayException : Exception {
+		public InvalidDayException(int day) : base("Invalid day! " + day) {
+			
 		}
 	}
 
@@ -116,15 +122,19 @@ namespace TestHelloWorld
 			int currentDay = currentDate.Day;
 
 			if (currentYear < _year) {
-				throw (new YearAfterCurrentYearException());
+				throw new YearAfterCurrentYearException();
 			} else if (currentYear == _year) {
 				if (currentMonth < _month) { 
-					throw (new MonthAfterCurrentMonthException());
+					throw new MonthAfterCurrentMonthException();
 				}
 			}
 
 			_daysSince = 0;
 			DaysInYear diy = new DaysInYear();
+
+			if (_day > DaysInMonth.daysInMonth(_month, diy.isLeapYear(_year))) {
+				throw new InvalidDayException(_day);
+			}
 
 			if (currentYear != _year) {
 				for (int i = _year + 1; i < currentYear; i++) {

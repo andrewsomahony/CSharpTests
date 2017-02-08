@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 
 namespace TestHelloWorld {
+	// The ViewStack handles running views.
+	// Views are classes that can initialize and run anything they like, from
+	// their own code, to separate programs that can run asynchronously.
+
+	// This class handles the non-async and async views, handles closing and exiting views
+	// by catching certain exceptions, and handles presentation in regards to the console
+	// clearing and such.
+
 	public class ViewStack {
-		private List<View> _views;
+		private List<IStackView> _views;
 
 		public ViewStack() {
-			_views = new List<View>();
+			_views = new List<IStackView>();
 		}
 
-		public void PushView(View v) {
+		public void PushView(IStackView v) {
 			Console.Clear();
 
 			_views.Add(v);
-
 			v.parentViewStack = this;
 
 			bool hasExited = false;
@@ -52,7 +59,7 @@ namespace TestHelloWorld {
 				Console.Clear();
 			}
 
-			View v = _views[_views.Count - 1];
+			IStackView v = _views[_views.Count - 1];
 			v.Stop();
 			_views.Remove(v);
 		}
